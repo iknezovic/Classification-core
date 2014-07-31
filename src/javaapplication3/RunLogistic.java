@@ -50,6 +50,10 @@ public class RunLogistic {
             Vector v = new SequentialAccessSparseVector(lmp.getNumFeatures());
             int target = csv.processLine(line, v);
             
+            System.out.println(line);
+            String [] split = line.split(",");
+            
+            
             double score = lr.classifyFull(v).maxValueIndex();
             if(score == target)
                correct++;
